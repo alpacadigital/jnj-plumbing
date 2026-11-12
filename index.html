@@ -10,7 +10,7 @@
 <meta property="og:description" content="Honest work. Small town values. Residential and commercial plumbing across southern Minnesota. Call 507-508-4770.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/sink.jpg">
-<link rel="icon" href="assets/logo.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -50,12 +50,12 @@
 
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="JNJ Plumbing home"><img src="assets/logo.png" alt="JNJ Plumbing" width="108" height="54"></a>
+    <a class="brand" href="#top" aria-label="JNJ Plumbing home"><svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#b4501a"/><path d="M25 10v14.5a6 6 0 0 1-12 0" fill="none" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 10h10" stroke="#fff" stroke-width="5.5" stroke-linecap="round"/></svg><span class="wm"><b>JNJ</b><small>Plumbing</small></span></a>
     <nav class="primary" aria-label="Main">
       <a href="#services">Services</a>
       <a href="#about">About</a>
       <a href="#area">Service area</a>
-      <a class="btn btn-primary" href="tel:+15075084770"><svg aria-hidden="true"><use href="#i-phone"/></svg>507-508-4770</a>
+      <a class="btn btn-primary call-btn" href="tel:+15075084770" aria-label="Call JNJ Plumbing at 507-508-4770"><svg aria-hidden="true"><use href="#i-phone"/></svg><span class="label">507-508-4770</span></a>
     </nav>
   </div>
 </header>
@@ -64,6 +64,7 @@
 <section class="hero" id="top">
   <div class="wrap">
     <div>
+      <p class="pill"><span class="pulse" aria-hidden="true"></span>Emergency &amp; after-hours service available</p>
       <p class="eyebrow">Mapleton &amp; Mankato plumbers</p>
       <h1>Honest plumbing. <em>Fair prices.</em> Done right the first time.</h1>
       <p class="lede">Master plumber-led repairs, installs and remodels for homes and businesses across southern Minnesota. Real people who pick up the phone and treat your house like their own.</p>
@@ -249,7 +250,7 @@
 <footer>
   <div class="wrap">
     <div>
-      <img src="assets/logo.png" alt="JNJ Plumbing" width="112" height="56" loading="lazy">
+      <a class="brand on-dark" href="#top" aria-label="JNJ Plumbing home"><svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#b4501a"/><path d="M25 10v14.5a6 6 0 0 1-12 0" fill="none" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 10h10" stroke="#fff" stroke-width="5.5" stroke-linecap="round"/></svg><span class="wm"><b>JNJ</b><small>Plumbing</small></span></a>
       <p>Trusted local plumbers serving southern Minnesota homes and businesses with honest, lasting workmanship.</p>
     </div>
     <div>
@@ -266,10 +267,6 @@
   <div class="wrap"><p class="legal">&copy; <span id="yr">2026</span> JNJ Plumbing. Honest Work. Small Town Values.</p></div>
 </footer>
 
-<div class="callbar">
-  <a class="btn btn-primary" href="tel:+15075084770"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call now</a>
-  <a class="btn btn-ghost" href="#contact">Free quote</a>
-</div>
 
 <script>
 document.getElementById('yr').textContent = new Date().getFullYear();
