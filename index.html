@@ -39,6 +39,7 @@
     <symbol id="s-badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
     <symbol id="s-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
     <symbol id="s-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/></symbol>
+    <symbol id="s-star" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2.5 2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></symbol>
   </defs>
 </svg>
 
@@ -50,6 +51,7 @@
     </a>
     <nav class="primary" aria-label="Main">
       <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
       <a class="btn btn-primary call-btn" href="tel:+15075084770" aria-label="Call JNJ Plumbing at 507-508-4770"><svg aria-hidden="true"><use href="#i-phone"/></svg><span class="label">507-508-4770</span></a>
@@ -67,6 +69,7 @@
           <a class="btn btn-primary" href="tel:+15075084770"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call 507-508-4770</a>
           <a class="textlink" href="#contact">Or request a quote</a>
         </div>
+        <a class="rating" href="https://www.google.com/maps/search/?api=1&amp;query=JNJ+Plumbing+MN+Mapleton" target="_blank" rel="noopener"><span class="stars" aria-hidden="true"><svg><use href="#s-star"/></svg><svg><use href="#s-star"/></svg><svg><use href="#s-star"/></svg><svg><use href="#s-star"/></svg><svg><use href="#s-star"/></svg></span><span><b>5.0</b> on Google · 45 reviews</span></a>
       </div>
       <img class="hero-img" src="assets/sink.jpg" alt="Water running from a kitchen faucet into a sink" width="900" height="900" fetchpriority="high">
     </div>
@@ -95,6 +98,19 @@
         <li><span class="ic"><svg aria-hidden="true"><use href="#s-bath"/></svg></span><span class="t">Kitchen and bath remodels</span></li>
         <li><span class="ic"><svg aria-hidden="true"><use href="#s-pipe"/></svg></span><span class="t">Basement rough-ins</span></li>
       </ul>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <h2>What customers say</h2>
+      <a class="rating" href="https://www.google.com/maps/search/?api=1&amp;query=JNJ+Plumbing+MN+Mapleton" target="_blank" rel="noopener"><span class="stars" aria-hidden="true"><svg><use href="#s-star"/></svg><svg><use href="#s-star"/></svg><svg><use href="#s-star"/></svg><svg><use href="#s-star"/></svg><svg><use href="#s-star"/></svg></span><span><b>5.0</b> on Google · 45 reviews</span></a>
+      <div class="review-grid">
+        <figure class="review"><span class="stars" aria-hidden="true"><svg><use href="#s-star"/></svg><svg><use href="#s-star"/></svg><svg><use href="#s-star"/></svg><svg><use href="#s-star"/></svg><svg><use href="#s-star"/></svg></span><blockquote>JNJ was very professional and personable! They went out of their way to explain what needed to be done and to make sure everything was completed well and in our best interest. We will be calling them again when we need more work done in our home!</blockquote><figcaption>Britta S.</figcaption></figure>
+        <figure class="review"><span class="stars" aria-hidden="true"><svg><use href="#s-star"/></svg><svg><use href="#s-star"/></svg><svg><use href="#s-star"/></svg><svg><use href="#s-star"/></svg><svg><use href="#s-star"/></svg></span><blockquote>Bo did amazing and was really quick. He worked on 3 of our water pipes that froze in the winter! I run an in home daycare in my basement and he was so nice telling and showing the kiddos what he was doing! Highly recommend!!</blockquote><figcaption>Hope C.</figcaption></figure>
+        <figure class="review"><span class="stars" aria-hidden="true"><svg><use href="#s-star"/></svg><svg><use href="#s-star"/></svg><svg><use href="#s-star"/></svg><svg><use href="#s-star"/></svg><svg><use href="#s-star"/></svg></span><blockquote>The service was excellent, I will continue to use this company as needed. Very professional and accommodating. I highly recommend.</blockquote><figcaption>Janet B.</figcaption></figure>
+      </div>
+      <a class="textlink more" href="https://www.google.com/maps/search/?api=1&amp;query=JNJ+Plumbing+MN+Mapleton" target="_blank" rel="noopener">Read all reviews on Google</a>
     </div>
   </section>
 
@@ -163,7 +179,7 @@ document.getElementById('quote').addEventListener('submit', function (ev) {
   function onScroll() { hdr.classList.toggle('scrolled', window.scrollY > 8); }
   onScroll(); addEventListener('scroll', onScroll, { passive: true });
   var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var sel = ['.facts .wrap > div', '#services h2', '#services .lede', '.services li', '.about img', '.about .wrap > div', '.reach', '#quote'];
+  var sel = ['.facts .wrap > div', '#services h2', '#services .lede', '.services li', '.about img', '.review', '.about .wrap > div', '.reach', '#quote'];
   var els = document.querySelectorAll(sel.join(','));
   if (calm || !('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
   els.forEach(function (e) {
