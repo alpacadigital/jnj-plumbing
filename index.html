@@ -15,6 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add("js")</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Plumber","name":"JNJ Plumbing","telephone":"+1-507-508-4770","email":"jnjplumbingmn@gmail.com","slogan":"Honest Work. Small Town Values.","areaServed":["Mapleton, MN","Mankato, MN","Southern Minnesota"]}
 </script>
@@ -155,6 +156,27 @@ document.getElementById('quote').addEventListener('submit', function (ev) {
   location.href = 'mailto:jnjplumbingmn@gmail.com?subject=' + encodeURIComponent('Quote request from ' + f.name.value) + '&body=' + encodeURIComponent(body);
   s.className = 'fine'; s.textContent = 'Opening your email app. You can also call 507-508-4770.';
 });
+</script>
+<script>
+// Motion: header shadow on scroll and gentle staggered reveals. Skipped when the visitor prefers reduced motion.
+(function () {
+  var hdr = document.querySelector('header.site');
+  function onScroll() { hdr.classList.toggle('scrolled', window.scrollY > 8); }
+  onScroll(); addEventListener('scroll', onScroll, { passive: true });
+  var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var sel = ['.facts .wrap > div', '#services h2', '#services .lede', '.services li', '.about img', '.about .wrap > div', '.reach', '#quote'];
+  var els = document.querySelectorAll(sel.join(','));
+  if (calm || !('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+  els.forEach(function (e) {
+    e.classList.add('reveal');
+    var i = Array.prototype.indexOf.call(e.parentElement.children, e);
+    e.style.setProperty('--i', Math.min(i, 8));
+  });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  els.forEach(function (e) { io.observe(e); });
+})();
 </script>
 </body>
 </html>
